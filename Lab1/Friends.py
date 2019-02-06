@@ -83,7 +83,9 @@ def sort_by_num_friends():
         else:
             d[f[1]]=1
     d = sorted(d.items(),key= lambda x:x[1])
-    print(d)
+    d1 = reversed(d)
+    for d2 in d1:
+        print(d2[0])
     print(str(users[d[0][0]]["name"])+" has Min friends")
     print(str(users[d[-1][0]]["name"])+" has Max friends")
 sort_by_num_friends()
