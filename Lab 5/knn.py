@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[9]:
-
 from collections import Counter
 from linear_algebra import distance
 from statistics import mean
@@ -11,7 +6,6 @@ import matplotlib.pyplot as plt
 from data import cities
 
 
-# In[10]:
 
 def majority_vote(labels):
     """assumes that labels are ordered from nearest to farthest"""
@@ -27,7 +21,6 @@ def majority_vote(labels):
         return majority_vote(labels[:-1]) # try again without the farthest
 
 
-# In[11]:
 
 def knn_classify(k, labeled_points, new_point):
     """each labeled point should be a pair (point, label)"""
@@ -41,8 +34,6 @@ def knn_classify(k, labeled_points, new_point):
     return majority_vote(k_nearest_labels)
 
 
-# In[12]:
-
 def predict_preferred_language_by_city(k_values, cities):
     """
     TODO
@@ -53,17 +44,16 @@ def predict_preferred_language_by_city(k_values, cities):
     """
     val = []
     for k in k_values:
-        count=0;
+        count=0
         for i in range(len(cities)):
             train = cities[0:i]+cities[i+1:]
             test = cities[i][0]
             if knn_classify(k,train, test)==cities[i][1]:
-                count+=1;
+                count+=1
         val.append(count)
     return val
 
 
-# In[15]:
 
 if __name__ == "__main__":
     k_values = [1, 3, 5, 7]
@@ -71,30 +61,6 @@ if __name__ == "__main__":
     # Import cities from data.py and pass it into predict_preferred_language_by_city(x, y).
     val = predict_preferred_language_by_city(k_values, data.cities)
     for i in range(len(val)):
-        print(k_values[i], "neighbor[s]:", val[i], "correct out of", len(data.cities))
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
-
-
-
-# In[ ]:
-
+        print(k_values[i], "neighbor[s]:", val[i], "correct out of", len(cities))
 
 
