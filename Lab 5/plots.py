@@ -1,8 +1,3 @@
-
-# coding: utf-8
-
-# In[5]:
-
 from collections import Counter
 from linear_algebra import distance
 from statistics import mean
@@ -12,14 +7,9 @@ from knn import knn_classify
 from knn import majority_vote
 from data import cities
 
-
-# In[6]:
-
 def plot_state_borders(plt, color='0.8'):
     pass
 
-
-# In[7]:
 
 def plot_cities(cities):
 
@@ -46,8 +36,6 @@ def plot_cities(cities):
     plt.title("Favorite Programming Languages")
     plt.show()
 
-
-# In[8]:
 
 def classify_and_plot_grid(cities, k=1):
     """
@@ -83,9 +71,6 @@ def classify_and_plot_grid(cities, k=1):
     # TODO
 
 
-
-# In[9]:
-
 if __name__ == "__main__":
     plot_cities(cities)
     classify_and_plot_grid(cities)
@@ -93,7 +78,6 @@ if __name__ == "__main__":
     classify_and_plot_grid(cities, 5)
 
 
-# In[ ]:
 
 
 
